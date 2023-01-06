@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Title, Divider, Button } from '@mantine/core';
+import { Title, Divider, CopyButton, Button, Input } from '@mantine/core';
 
 import Q_0 from './q_0';
 import Q_1 from './q_1';
@@ -18,12 +18,10 @@ export default function Result(props) {
     let questions = formData.questions
     let formUrl = props.formUrl
 
-    // useEffect(() => {
-    //     console.log(answers)
-    // })
 
     //Chosen answer
     const [answers, setAnswers] = useState(Array(questions.length))
+    const [finalUrl, setFinalUrl] = useState("")
 
     return (
         <>
@@ -75,7 +73,7 @@ export default function Result(props) {
                 })
                 : <></>}
 
-            <br />
+            <br /><br />
             <Button
                 onClick={() => {
                     let finalUrl = formUrl + "?"
@@ -85,7 +83,31 @@ export default function Result(props) {
                         }
                     }
                     console.log(finalUrl)
+                    setFinalUrl(finalUrl)
                 }}>Generate</Button>
+
+            <br />
+            {(finalUrl !== "") ?
+                <>
+                    <br />
+                    <Input value={finalUrl} disabled></Input><br />
+
+                    <CopyButton value={finalUrl}>
+                        {({ copied, copy }) => (
+                            <Button
+                                style={{ marginRight: 20 }}
+                                color={copied ? 'teal' : 'blue'}
+                                onClick={copy}>
+                                {copied ? 'Copied' : 'Copy URL to clipboard'}
+                            </Button>
+                        )}
+                    </CopyButton>
+
+                    <a target="_blank" href={finalUrl}>
+                        <Button>Open In New Tab</Button>
+                    </a>
+                </>
+                : <></>}
         </>
     )
 

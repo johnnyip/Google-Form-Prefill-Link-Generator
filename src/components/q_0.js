@@ -24,7 +24,7 @@ export default function Q_0(props) {
                         setInput(inputValue)
 
                         let tmpAnswer = props.answers
-                        let encodedAns = encodeURIComponent(inputValue)
+                        let encodedAns = inputValue
                         tmpAnswer[index] = `entry.${questionId}=${encodedAns}`
                         props.setAnswers(tmpAnswer)
                     }}
