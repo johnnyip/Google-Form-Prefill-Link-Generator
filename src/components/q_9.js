@@ -19,7 +19,6 @@ export default function Q_9(props) {
             let questionId = data[4][0][0]
 
             let tmpAnswer = props.answers
-            console.log(date)
             let encodedAns = moment(date).format('hh:mm');
             tmpAnswer[index] = `entry.${questionId}=${encodedAns}`
             props.setAnswers(tmpAnswer)

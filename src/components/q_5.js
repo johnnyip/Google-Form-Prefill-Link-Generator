@@ -35,7 +35,7 @@ export default function Q_2(props) {
                     label={data[1]}
                 >
 
-                    <Table style={{ textAlign: "center" }} withBorder>
+                    <Table style={{ textAlign: "center" }}>
                         <tbody>
                             <tr>
                                 <td></td>

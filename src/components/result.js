@@ -8,7 +8,8 @@ import Q_3 from './q_3';
 import Q_4 from './q_4';
 import Q_5 from './q_5';
 import Q_6 from './q_6';
-import Q_7 from './q_7';
+import Q_7_multi from './q_7_multi';
+import Q_7_single from './q_7_single';
 import Q_8 from './q_8';
 import Q_9 from './q_9';
 import Q_10 from './q_10';
@@ -55,8 +56,11 @@ export default function Result(props) {
                     else if (qtype === 6)
                         return (<Q_6 data={item} key={i} index={i}
                             answers={answers} setAnswers={setAnswers} />)
-                    else if (qtype === 7)
-                        return (<Q_7 data={item} key={i} index={i}
+                    else if (qtype === 7 && item[4][0][11][0] === 1)
+                        return (<Q_7_multi data={item} key={i} index={i}
+                            answers={answers} setAnswers={setAnswers} />)
+                    else if (qtype === 7 && item[4][0][11][0] === 0)
+                        return (<Q_7_single data={item} key={i} index={i}
                             answers={answers} setAnswers={setAnswers} />)
                     else if (qtype === 8)
                         return (<Q_8 data={item} key={i} index={i}
