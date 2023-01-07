@@ -29,7 +29,6 @@ export default function Result(props) {
             <Title order={3}>{formData.title}</Title>
             <Divider />
 
-            <Button onClick={() => { console.log(answers) }}>Check</Button>
             {questions.length !== 0 ?
                 [...questions].map((item, i) => {
                     let qtype = item[3]
