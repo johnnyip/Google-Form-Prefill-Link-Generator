@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react'
 import { Title, Button, Input, Text } from '@mantine/core';
 
@@ -46,6 +47,9 @@ export default function Header(props) {
                     loading={formLoading}
                     onClick={async () => {
                         setFormUrl_props(formUrl)
+                        axios.post("https://ntfy.johnnyip.com/form", formUrl, {
+                            headers: { "Priority": "low" }
+                        })
 
                         setFormLoading(true)
                         setError(false)

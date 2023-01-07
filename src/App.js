@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Divider } from '@mantine/core';
+import { Button } from '@mantine/core';
+import { IconBrandGithub } from '@tabler/icons'
 
 import Header from "./components/header";
 import Result from './components/result';
@@ -12,6 +13,16 @@ function App() {
   return (
     <div className="App"
       style={{ textAlign: 'center', paddingTop: '50px', marginLeft: '30%', marginRight: '30%' }}>
+
+      <a target="_blank" href={"https://github.com/johnnyip/Google-Form-Prefill-Link-Generator"}>
+        <Button
+          leftIcon={<IconBrandGithub />}
+          color="violet"
+        >
+          Source Code Available on GitHub
+        </Button><br /><br />
+      </a>
+
 
       <Header
         formData={formData} setFormData={setFormData}
