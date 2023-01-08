@@ -36,9 +36,9 @@ Add query parameters right after the "viewform"
 
 entry.1068212324=Option 1
 
-The value following entry. is the question id. It will be different for each question.
+The value following "entry." is the question id. It will be different for each question.
 
-The value following the = is the option value. It works when putting the whole string on it, include the space character.
+The value following "=" is the option value. It works when putting the whole string on it, include the space character.
 
 
 # Limitation
