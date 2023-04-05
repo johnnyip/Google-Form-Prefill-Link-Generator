@@ -13,11 +13,11 @@ function App() {
 
   return (
     <div className="App"
-      style={{ textAlign: 'center', paddingTop: '50px', marginLeft: '30%', marginRight: '30%' }}>
+      style={{ textAlign: 'center', marginLeft: '30%', marginRight: '30%' }}>
 
-      <Title>
+      {/* <Title>
         Google Form Prefill Link Generator
-      </Title><br /><br />
+      </Title><br /><br /> */}
 
       <a target="_blank" href={"https://github.com/johnnyip/Google-Form-Prefill-Link-Generator"}>
         <Button
