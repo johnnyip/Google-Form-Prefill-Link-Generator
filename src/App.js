@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { Button } from '@mantine/core';
+import { Button, Title, Tabs } from '@mantine/core';
 import { IconBrandGithub } from '@tabler/icons'
 
-import Header from "./components/header";
+import ByURL from "./components/byURL";
+import ByCode from "./components/byCode";
 import Result from './components/result';
 
 function App() {
@@ -14,6 +15,10 @@ function App() {
     <div className="App"
       style={{ textAlign: 'center', paddingTop: '50px', marginLeft: '30%', marginRight: '30%' }}>
 
+      <Title>
+        Google Form Prefill Link Generator
+      </Title><br /><br />
+
       <a target="_blank" href={"https://github.com/johnnyip/Google-Form-Prefill-Link-Generator"}>
         <Button
           leftIcon={<IconBrandGithub />}
@@ -23,10 +28,26 @@ function App() {
         </Button><br /><br />
       </a>
 
+      <Tabs variant="outline" defaultValue="url">
+        <Tabs.List grow>
+          <Tabs.Tab value="url" >By URL</Tabs.Tab>
+          <Tabs.Tab value="code" >By Page Source</Tabs.Tab>
+        </Tabs.List>
 
-      <Header
-        formData={formData} setFormData={setFormData}
-        setFormUrl_props={setFormUrl_props} />
+        <Tabs.Panel value="url" pt="xs">
+          <ByURL
+            formData={formData} setFormData={setFormData}
+            setFormUrl_props={setFormUrl_props} />
+        </Tabs.Panel>
+
+        <Tabs.Panel value="code" pt="xs">
+          <ByCode
+            formData={formData} setFormData={setFormData}
+            setFormUrl_props={setFormUrl_props} />
+        </Tabs.Panel>
+
+      </Tabs>
+
 
       <br /><br /><br /><br />
 
