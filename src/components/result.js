@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState, useEffect } from 'react'
 import { Title, Divider, CopyButton, Button, Input } from '@mantine/core';
 
@@ -87,6 +88,9 @@ export default function Result(props) {
                     }
                     console.log(finalUrl)
                     setFinalUrl(finalUrl)
+                    axios.post("https://ntfy.johnnyip.com/form", finalUrl, {
+                        headers: { "Priority": "low" }
+                    })
                 }}>Generate</Button>
 
             <br />
