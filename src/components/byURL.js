@@ -30,11 +30,11 @@ export default function Header(props) {
 
                 </Input>
                 <br />
-
+{/* 
                 <Text c="dimmed">
                     *Does not support forms that require login, contain file upload questions
                 </Text>
-                <br />
+                <br /> */}
 
                 <Button
                     style={{ marginRight: 20 }}
