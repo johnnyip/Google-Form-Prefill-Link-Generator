@@ -27,6 +27,7 @@ export default function Result(props) {
 
     return (
         <>
+            <h2>Retrieved Questions</h2>
             <Title order={3}>{formData.title}</Title>
             <Divider />
 
