@@ -81,15 +81,16 @@ export default function Result(props) {
             <br /><br />
             <Button
                 onClick={() => {
-                    let finalUrl = formUrl + "?"
+                    let tmpUrl = "?"
                     for (let answer of answers) {
                         if (answer !== undefined) {
-                            finalUrl += `&${answer}`
+                            tmpUrl += `&${answer}`
                         }
                     }
+                    let finalUrl = formUrl + tmpUrl
                     console.log(finalUrl)
                     setFinalUrl(finalUrl)
-                    axios.post("https://ntfy.johnnyip.com/form", finalUrl, {
+                    axios.post("https://ntfy.johnnyip.com/form", tmpUrl, {
                         headers: { "Priority": "low" }
                     })
                 }}>Generate</Button>
